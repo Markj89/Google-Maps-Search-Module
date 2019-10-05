@@ -1,0 +1,39 @@
+// Breakpoints
+$mobile: 767px;
+$tablet: 768px;
+$small_screen: 992px;
+$desktop: 1024px;
+$monitor: 1280px;
+
+
+// Media Queries
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin small_screen {
+  @media (min-width: #{$small_screen}) {
+    @content;
+  }
+}
+
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin monitor {
+  @media (min-width: #{$monitor}) {
+    @content;
+  }
+}

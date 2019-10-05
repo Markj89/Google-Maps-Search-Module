@@ -1,0 +1,29 @@
+{
+  "name": "busbank_vendor_map_search_module",
+  "version": "1.0.0",
+  "description": "This application uses Google Maps API, Places API, Geocoding API, and http/AJAX to call each vendor in the vicindity of stops in the generated lead",
+  "main": "controller.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Markj89/Vendor-Maps-Search-Module.git"
+  },
+  "keywords": [
+    "google_maps",
+    "angularjs",
+    "requirejs",
+    "curl",
+    "php"
+  ],
+  "author": "Marcus Jackson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Markj89/Vendor-Maps-Search-Module/issues"
+  },
+  "homepage": "https://github.com/Markj89/Vendor-Maps-Search-Module#readme"
+}

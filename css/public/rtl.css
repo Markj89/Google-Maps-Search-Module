@@ -1,0 +1,107 @@
+/**
+ *
+ * Adding support for language written in a Right To Left (RTL) direction is easy -
+ * it's just a matter of overwriting all the horizontal positioning attributes
+ * of your CSS stylesheet in a separate stylesheet file named rtl.css.
+ * 
+ * http://codex.wordpress.org/Right_to_Left_Language_Support
+ **/
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+*:focus { outline: none; }
+{
+  "classPrefix": "foo-",
+  "feature-detects": ["dom/hidden"]
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit; 
+  vertical-align: baseline;
+  letter-spacing: 0.09px;
+  font-weight: normal;
+}
+article,aside,details,figcaption,
+figure,footer,header,hgroup,
+main,nav,section,summary{display:block;}
+audio,canvas,progress,video{display:inline-block;vertical-align:baseline;}audio:not([controls]){display:none;height:0;}[hidden],template{display:none;}a{background:transparent;}a:active,a:hover{outline:0;}abbr[title]{border-bottom:1px dotted;}b,strong{font-weight:bold;}dfn{font-style:italic;}h1{font-size:2em;margin:0.67em 0;}mark{background:#ff0;color:#000;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-0.5em;}sub{bottom:-0.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:1em 40px;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}pre{overflow:auto;}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em;}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0;}button{overflow:visible;}button,select{text-transform:none;}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}input{line-height:normal;}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto;}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type="email"]{-webkit-appearance:none;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;}legend{border:0;padding:0;}textarea{overflow:auto;}optgroup{font-weight:bold;}table{border-collapse:collapse;border-spacing:0;}td,th{padding:0;}.container,.post-body,.subscribe,.sep{*zoom:1;margin-left: 15px; margin-right:15px;}.container:after,.post-body:after,.subscribe:after,.sep:after{content:'';display:table;line-height:0;clear:both;}
+img {
+  max-width: 100%;
+  line-height: 0;
+  vertical-align: middle;
+}
+body {
+  font-family: sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  background-attachment: scroll;
+  background-position: top left;
+  background-repeat: no-repeat;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  body {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+  }
+}
+body, html {
+  overflow-x: hidden;
+  height: 100%;
+}
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+aside {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: auto; /*make sure there are scrollbars when needed*/
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "", "", sans-serif !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  text-rendering: optimizeLegibility !important;
+  line-height: 1.4 !important;
+}
+svg{ display: block; }

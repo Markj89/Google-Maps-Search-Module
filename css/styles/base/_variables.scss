@@ -1,0 +1,108 @@
+
+// Global Styles
+$auto: auto;
+$body-bg-color: #f5f5f5;
+$zero-margin: 0 auto;
+$vertical-align-middle: middle;
+$normal: normal;
+$bold: bold;
+$both: both;
+$uppercase: uppercase;
+$border-box: border-box;
+$block: block;
+$inline: inline;
+$inline-block: inline-block;
+$relative: relative;
+$absolute: absolute;
+$static: static;
+$fixed: fixed;
+$hidden: hidden;
+$pointer: pointer;
+$nowrap: nowrap;
+$none: none;
+$font-family: "Open Sans";
+$fontawesome: "FontAwesome";
+$left: left;
+$center: center;
+$middle: middle;
+$right: right;
+$no-decoration: none;
+$underlined: underline;
+
+// Pixels
+$zero-pixel: 0px;
+$one-pixel: 1px;
+$two-pixel: 2px;
+$three-pixel: 3px;
+$four-pixel: 4px;
+$five-pixel: 5px;
+$six-pixel: 6px;
+$seven-pixel: 7px;
+$eight-pixel: 8px;
+$nine-pixel: 9px;
+$ten-pixel: 10px;
+$twenty-pixel: 20px;
+$thirty-pixel: 30px;
+$forty-pixel: 40px;
+$fifthty-pixel: 50px;
+$sixty-pixel: 60px;
+$seventy-pixel: 70px;
+$eighty-pixel: 80px;
+$ninety-pixel: 90px;
+$hundred-pixel: 100px;
+
+// Numerical
+$zero: 0;
+$one: 1;
+$two: 2;
+$three: 3;
+$four: 4;
+$five: 5;
+$six: 6;
+$seven: 7;
+$eight: 8;
+$nine: 9;
+$ten: 10;
+
+// Percentage
+$ten-percent:10%;
+$twenty: 20%;
+$thirty: 30%;
+$forty: 40%;
+$fifthty: 50%;
+$sixty: 60%;
+$seventy: 70%;
+$eigthty: 80%;
+$ninety: 90%;
+$hundred: 100%;
+
+
+// Colors Styles
+$transparent: transparent;
+$white: #fff;
+$white-hover: #eee;
+$red: #e30b25;
+$darker-red: #d90b25;
+$lighter-black: #464646;
+$font-black: #323131;
+$black: #444;
+$gray: #aaaaaa;
+$highlight-color: #FF5E99;
+
+// Button Styles
+$primary-button-bg-color: #e30b25;
+$primary-button-hover-bg-color: #d90b25;
+$primary-button-padding: 12px 35px 12px 35px;
+
+// Map Styles
+$google-maps-height: 500px;
+
+
+// Table Styles
+$table-width: 100%;
+
+// Form Styles 
+$label-size: 1.3rem;
+$label-weight: 400;
+
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";

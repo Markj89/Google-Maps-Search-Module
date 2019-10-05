@@ -1,0 +1,385 @@
+@charset "UTF-8";
+
+*, *::after, *::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+* {
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* ============================================= */
+/*                  Global Styles                */
+/* ============================================= */
+body {
+	*font-size: small;
+  text-rendering: optimizeLegibility;
+ 	/* this causes problems in Chrome for Windows and on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+html { overflow-y: scroll; }
+a {
+	margin: $zero;
+  	padding: $zero;
+  	font-size: 100%;
+  	vertical-align: baseline;
+  	background: $transparent;
+}
+input, select { vertical-align: middle; }
+select, input, textarea, button { font: 99% sans-serif; }
+body, select, input, textarea { color: $lighter-black; }
+
+@font-face {
+	font-family: $fontawesome;
+ 	font-weight: normal;
+	font-style: normal;
+}
+p { margin-bottom: 19px; }
+h1, h2, h3, h4, h5, h6 { 
+	text-transform: $uppercase;
+	margin: $zero;
+	padding: $zero;
+	color: $black;
+	font-family: $font-family;
+}
+h1 {
+	font-size: 45px;
+	line-height: 45px;
+	line-height: 50px;
+}
+h2 { 
+	font-size: 40px;
+ 	line-height: 45px;
+}
+h3 {
+	font-size: 35px;
+	line-height: 40px;
+}
+h4 {
+	font-size: 25px;
+	line-height: 30px;
+}
+h5 {
+	font-size: 20px;
+ 	line-height: 25px;
+}
+h6 { 
+	font-size: 18px;
+	line-height: 23px;
+}
+image {
+	max-width: $hundred;
+	width: $hundred;
+}
+strong {font-weight: $bold; }
+em { font-style: italic; }
+
+/* ============================================= */
+/*                Universal Styles               */
+/* ============================================= */
+body { background-color: $body-bg-color; 
+  main {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: $hundred;
+    position: fixed;
+  }
+}
+
+#horizontal-scroll {
+  width: $hundred;
+  overflow-x: scroll;
+  overflow-y: visible;
+  display: table-cell;
+  position: relative;
+}
+@include mobile {
+  body {
+    main {
+      display: $block;
+      height: auto;
+    }
+  }
+  .scroll { height: auto; }
+}
+/* ============================================= */
+/*                	 Header Styles          	   */
+/* ============================================= */
+
+
+/* ============================================= */
+/*             	 Navigation Styles          	   */
+/* ============================================= */
+.site-head {
+  height: $sixty-pixel;
+  min-height: 45px;
+  background-color: $red;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  position: $relative;
+  z-index: 1000;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  -ms-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.25s ease-in;
+  -o-transition: 0.25s ease-in;
+  -moz-transition: 0.25s ease-in;
+  transition: 0.25s ease-in;
+  .site-header {
+    img {
+      margin: $auto;
+      padding: $five-pixel;
+    }
+  }
+}
+
+
+/* ============================================= */
+/*                	 Footer Styles            	 */
+/* ============================================= */
+
+
+/* ============================================= */
+/*                	 Link Styles            	 */
+/* ============================================= */
+a { cursor: $pointer; }
+.link { color: $red; }
+.underlined { text-decoration: $underlined; }
+.none-decoration { text-decoration: $none; }
+
+
+/* ============================================= */
+/*                 	 Map Styles            	     */
+/* ============================================= */
+#map {
+  width: $hundred;
+  height: 100vh;
+  min-height: $hundred;
+  position: $absolute;
+  top: $zero;
+  right: $zero;
+  margin: 0 auto;
+  padding: $zero;
+  //@include mobile { width: $hundred; }
+  //@include tablet { width: 53.333333%;}
+  //@include small_screen { width: $hundred; }
+  //@include desktop { width: $hundred; }
+  //@include monitor { width: $hundred; }
+}
+.marker {
+  display: $block;
+  margin-left: 15px;
+  margin-right: 15px;
+  h1 {
+    font-size: 1.6rem;
+    color: #222;
+    letter-spacing: 0.05px;
+  }
+  a {
+    color: $red;
+    letter-spacing: 0.10px;
+  }
+}
+
+/* ============================================= */
+/*               Sidebar, Aside Styles           */
+/* ============================================= */
+.sidebar-nav li { 
+  line-height: $forty-pixel;
+  a { 
+    display: $block;
+    text-decoration: $none;
+    &:hover,
+    &:active,
+    &:focus { 
+      text-decoration: $none; 
+    }
+  }
+}
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: $sixty-pixel;
+}
+.sidebar-nav > .sidebar-brand a { 
+  color: #999;
+  &:hover {
+    color: #fff;
+    background: none;
+  }
+}
+
+
+/* ============================================= */
+/*            	   Sections Styles      	     */
+/* ============================================= */
+main {
+  width: $hundred;
+  overflow: hidden;
+  position: $relative;
+  .nav-wrap {
+    background-color: #C90A21;
+    overflow-y: auto;
+    top: $zero;
+    bottom: $zero;
+    z-index: 100;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    -moz-box-shadow:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    -o-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    @include desktop {
+      width: 320px;
+      min-width: 320px;
+      max-width: 350px;
+      position: $static;
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+    }
+    .site-nav {
+      margin-top: 25px;
+      width: $hundred;
+    }
+    .statement {
+      padding: $ten-pixel;
+      h1 { color: $white; }
+      ul {
+        margin: $zero-pixel;
+        display: table;
+      }
+      p, li {
+        color: $white;
+        letter-spacing: 0.05px;
+        text-rendering: auto;
+        line-height: 14px;
+      }
+      li {
+        padding: $five-pixel;
+        margin-left: 15px;
+        list-style-type: upper-latin;
+      }
+    }
+    .label { color: $white; }
+    .form-control { background-image: linear-gradient($white-hover, $white-hover), linear-gradient($white, $white); }
+    .btn-lined {
+      background-color: $transparent;
+      border: $one-pixel solid $white;
+      border-radius: $two-pixel;
+      &:hover { 
+        background-color: $white-hover;
+        color: $white-hover;
+      }
+    }
+    #mileage {
+      padding: 15px;
+      margin: 15px;
+    }
+  }
+  .content-container {
+    min-width: $zero;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    .fixedHeader {}
+    .page {
+      /*margin-top: 55px; */
+      /* padding: 15px; */
+      padding-left: $zero-pixel;
+      .page-wrap {
+        position: $relative;
+        .dossier {
+          background-color: $white;
+          border: 0.5px solid #eee;
+          border-radius: $two-pixel;
+          padding: $ten-pixel;
+          position: $absolute;
+          top: $thirty-pixel;
+          left: $twenty-pixel;
+        }
+       }
+      .page-scroll-horizontal { overflow-x: scroll; }
+    }
+  }
+  .flex {
+    flex: $one;
+    -webkit-flex: $one;
+  }
+}
+.filter-content { 
+  margin-top: 35px;
+  position: $relative;
+  background-color: $white;
+}
+.panel {
+  margin-bottom: $zero;
+  box-shadow: $none;
+  th a {
+    color: #535353;
+    font-weight: 400;
+  }
+}
+.single-panel {
+  margin-bottom: $twenty-pixel;
+  background-color: $white;
+  border: 0px solid transparent;
+  border-radius: $two-pixel;
+  -webkit-box-shadow:0 1px 1px rgba(0, 0, 0, .05); 
+  box-shadow:0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-lined .panel-heading {
+  color: #535353;
+  padding-bottom: $zero;
+  padding: 14px 0;
+  margin: 0 22px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+
+/* ================================================================= */
+/*        Print Styles: Inline to avoid required HTTP connection     */
+/* ================================================================= */
+@media print {
+	* {
+    background: $transparent;
+   	color: $black;
+   	/* Black prints faster: h5bp.com/s */
+   	box-shadow: $none;
+   	text-shadow: $none;
+   }
+   	a, a:visited { text-decoration: $underlined; }
+   	a[href]:after { content: " (" attr(href) ")"; }
+   	abbr[title]:after { content: " (" attr(title) ")"; }
+   	.ir a:after,
+   	a[href^="javascript:"]:after,
+   	a[href^="#"]:after { content: ""; }
+   	pre, blockquote {
+   		border: $one-pixel solid #999;
+   		page-break-inside: avoid;
+   	}
+	thead { display: table-header-group; /* h5bp.com/t */ }
+	tr, img { page-break-inside: avoid; }
+	img { max-width: $hundred; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 {
+		orphans: $three;
+		widows: $three;
+	} 
+	h2, h3 { page-break-after: avoid; }
+}

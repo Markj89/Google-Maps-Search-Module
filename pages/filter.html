@@ -1,0 +1,13 @@
+<h2>Filter</h2>
+<form class="filter">
+	<div class="sixth-user" ng-repeat="tier in tiers">
+		<label class="inline-label label-wrapper">
+		<input type="checkbox" name="tiers" id="{{ tier.name }}" class="form-button" ng-model="tier.selected" ng-value="tier.name" ng-change="setVendors('{{ tier.name }}')" ng-checked="{{ tier.selected }}" />
+			{{ tier.name }}
+		</label>
+	</div><!--/ .fifth-user -->
+	<div class="first-user">
+		<label class="label" for="buses">Choose Your Bus Type</label>
+		<select ng-options="option.name for option in busTypes.availableOptions" ng-model="selectedItem" ng-change="checkBusType(selectedItem)"></select>
+	</div><!--/ .first-user -->
+</form><!--/ .filter -->

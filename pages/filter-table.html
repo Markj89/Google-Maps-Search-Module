@@ -1,0 +1,54 @@
+<div class="row">
+	<div class="col-md-10 filter-content">
+		<form class="filter">
+			<div class="second-user">
+				<label class="label" for="filter">Filter</label>
+				<input type="text" name="filter" ng-model="filter" id="search" class="form-control" placeholder="Filter...">
+			</div><!--/ .second-user -->
+			<div class="fifth-user">
+				<select name="pageSelect" ng-model="pageSize.model" id="pageSize" class="form-control">
+					<option ng-repeat="option in tiers.availableOptions" value="{{option.id}}">{{option.name}}</option>
+				</select>
+			</div><!--/ .second-user -->
+		</form>
+	</div><!--/ .col-md-10 -->
+</div><!--/ .row -->
+
+<div class="filter-content">
+	<form class="filter">
+		<div class="second-user">
+			<label class="label" for="filter">Filter</label>
+			<input type="text" name="filter" ng-model="filter" id="search" class="form-control" placeholder="Filter...">
+		</div><!--/ .second-user -->
+		<div class="first-user">
+			<select ng-model="pageSize" id="pageSize" class="form-control">
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+			</select>
+		</div><!--/ .first-user -->
+		<div class="sixth-user" ng-repeat="tier in tiers">
+			<label class="inline-label label-wrapper">
+				<input type="checkbox" name="tiers" class="form-button" ng-model="tier.selected" ng-checked="tier.selected" ng-value="tier.selected" ng-change="hideVendors()">
+				{{ tier.name }}
+			</label>
+		</div><!--/ .fifth-user -->
+	</form><!--/ .filter -->
+	<table st-table="response" cellspacing="0" width="100%" id="table_id" class="table display" role="grid">
+		<tbody id="allvendors" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+			<tr class="clickable" ng-repeat="item in items | filter:filter | startFrom:currentPage*pageSize | limitTo:pageSize">
+				<td id="name">{{item.name}}</td>
+				<td id="email"><a ng-href="mailto:{{item.email}}"> {{item.email}}</a></td>
+				<td id="phone"><a ng-href="tel:{{item.phone}}"> {{item.phone}} </a></td>
+				<td id="motor_coach"> {{item.motor_coach | number}} </td>
+				<td id="mini_bus"> {{item.mini_bus | number}} </td>
+				<td id="school_bus"> {{item.school_bus | number}} </td>
+				<td id="tier"> {{item.tier}} </td>
+			</tr>
+		</tbody><!--/ #allvendors -->
+	</table><!--/ .table -->
+	<button class="btn" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
+	{{ currentPage+1 }} / {{ numberOfPages() }}
+	<button class="btn" ng-disabled="currentPage >= getData().length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
+</div><!--/ .filter-content -->    

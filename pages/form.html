@@ -1,0 +1,51 @@
+<nav class="clearfix ng-scope site-nav" role="navigation">
+	<div class="clearfix"></div>
+	<div class="site-header site-logo">
+		<img src="img/footer-logo.png" alt="Logo" width="120" />
+	</div>
+	<div class="statement">
+		<h1>Vendor List</h1>
+	</div>
+	<form method="POST" name="form" id="form" autocomplete="off" ng-submit="submit()" ng-model="form" role="form">
+		<fieldset class="scroll">
+			<div ng-repeat="location in directions track by $index" ng-if="$first">
+				<div ng-if="$index === 0" ui-sortable="sortableOptions">
+					<div ng-repeat="destination in destinations track by $index" ng-if="routes">
+						<div class="first-user" id="locationField">
+							<div id="span-circle" class="handle"><span><i class="fa fa-map-marker" aria-hidden="true"></i></span></div>
+							<label class="label" for="metro">Choose city or metro</label>
+							<input id="metro" type="text" name="metro" vs-google-autocomplete class="form-control metro autocomplete" ng-model="directions[$index].location" placeholder="Add City/Metro (e.g. San Diego, CA MSA)" ng-model-options="{ updateOn: 'default', updateOnDefault: true }">
+						</div><!--/ .second-user -->
+					</div><!--/ .ng-repeat -->
+				</div><!--/ .ng-if -->
+			</div><!-- .ng-repeat -->
+			<div id="" class="second-user">
+				<button class="btn btn-lined" id="addbutton" type="button" id="add_stop" ng-click="addField(metro)" ng-model="addbutton"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+			</div><!--/ .first-user -->
+			<div class="second-user">
+				<button class="btn btn-lined" id="deleteButton" type="button" id="delete_stop" ng-click="deleteField($last)" ng-if="removeButton" ng-model="removeButton"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+			</div><!--/ .second-user -->
+			<button type="submit" class="btn submit btn-lined" ng-click="updateTemplate()">Route Trip</button>
+		</fieldset><!--/ .scroll -->
+	</form><!--/ .form -->
+
+	<div ng-include="droperDown()"></div>
+</nav><!--/ .clearfix -->
+
+<form method="POST" name="form" id="form" autocomplete="off" ng-submit="submit()" ng-model="form" role="form">
+	<fieldset class="scroll" ui-sortable="sortableOptions" ng-model="directions" ui-sortable-update="expression">
+		<div ng-repeat="direction in directions">
+			<div class="first-user" id="locationField">
+			<div id="span-circle" class="handle"><span><i class="fa fa-map-marker" aria-hidden="true"></i></span></div>
+				<input id="metro" type="text" name="metro" vs-google-autocomplete class="form-control metro autocomplete" ng-model="directions[$index].location" placeholder="Add City/Metro (e.g. San Diego, CA MSA)" ng-model-options="{ updateOn: 'default', updateOnDefault: true }">
+			</div><!--/ .first-user -->
+		</div>
+	</fieldset><!--/ .scroll -->
+	<div id="" class="second-user">
+		<button class="btn btn-lined" id="addbutton" type="button" id="add_stop" ng-click="addField(metro)" ng-model="addbutton"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+	</div><!--/ .first-user -->
+	<div class="second-user">
+		<button class="btn btn-lined" id="deleteButton" type="button" id="delete_stop" ng-click="deleteField($last)" ng-if="removeButton" ng-model="removeButton"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+	</div><!--/ .second-user -->
+	<button type="submit" class="btn submit btn-lined" ng-submit="submit()">Route Trip</button>
+</form><!--/ .form -->

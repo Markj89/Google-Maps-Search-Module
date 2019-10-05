@@ -1,0 +1,19 @@
+// Transitions
+@mixin transition($property, $speed, $effect) {
+	transition: $property, $speed, $effect;
+	-webkit-transition: $property, $speed, $effect;
+	-moz-osx-transition: $property, $speed, $effect;
+	-o-transition: $property, $speed, $effect;
+}
+
+// Antialiasing mode font rendering
+@mixin font-smoothing {
+	-webkit-font-smoothing: antialised;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Hover Effect
+@mixin hover-button($darker-red) {
+	background-color: $darker-red;
+	@include transition(background-color, 0.3s, ease-in-out);
+}

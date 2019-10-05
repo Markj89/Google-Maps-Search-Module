@@ -1,0 +1,77 @@
+/* ============================================= */
+/*                  Button Styles                */
+/* ============================================= */
+.btn,
+.secondary-btn,
+.submit {
+	margin-bottom: $zero;
+	align-items: $center;
+	font-size: $label-size;
+	font-weight: $label-weight;
+	text-align: $center;
+	white-space: $nowrap;
+	background-color: $red;
+	cursor: $pointer;
+	text-decoration: $none;
+	color: $white;
+	@include hover-button($darker-red);
+	&.hover,
+	&:focus,
+	&:hover {
+		color: $red;
+		text-decoration: $none;
+		background-color: $darker-red !important;
+		.fa { color: $red; }
+	}
+}
+.btn { border-radius: $two-pixel; }
+.secondary-btn { 
+	display: $inline;
+	&.hover,
+	&:focus {
+		color: $white;
+		text-decoration: $none;
+		background-color: $darker-red;
+		.fa { color: $white; }
+	}
+}
+.btn-prev {
+	display: $inline-block;
+	clear: $left;
+}
+.btn-next {
+	display: $inline-block;
+	clear: $right;
+}
+#addbutton {
+	clear: $left;
+	display: $inline-block;
+	margin-right: $five-pixel;
+}
+.btn-transparent {
+	border: $zero;
+	background-color: $transparent;
+	&:hover, 
+	&:focus {
+		background-color: $transparent;
+	}
+	.fa {
+		color: $white;
+		font-size: 1.2em;
+	}
+}
+#deleteButton {
+	clear: $right;
+	display: $inline-block;
+	cursor: $pointer;
+	margin-top: $ten-pixel;
+	margin-left: $five-pixel;
+	padding: $four-pixel $zero $five-pixel;
+}
+.page {
+	.btn-next, .btn-prev {	
+		&:hover, &:focus {
+			color: $white;
+		}
+	}
+}
